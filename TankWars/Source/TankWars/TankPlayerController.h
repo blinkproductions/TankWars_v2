@@ -30,13 +30,13 @@ public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float CrossHairXLocation = 0.5f;
 	
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float CrossHairYLocation = 0.33333f;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
 	float LineTraceRange = 1000000.f;
 
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
