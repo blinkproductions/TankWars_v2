@@ -20,7 +20,7 @@ class TANKWARS_API UTankMovementComponent : public UNavMovementComponent
 	
 
 public:
-	UFUNCTION(BlueprintCallable, Category = Input)
+	UFUNCTION(BlueprintCallable, Category = Setup)
 	void Initialize(UTankTrack* LeftTrackToSet, UTankTrack* RightTrackToSet);
 
 	UFUNCTION(BlueprintCallable, Category = Input)
