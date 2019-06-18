@@ -16,7 +16,7 @@ class TANKWARS_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 	
 private:
-	ATank * GetControlledTank() const;
+	
 
 	// Start the tank moving the barrel so that a shot would hit where
 	// the crosshair intersects the world
@@ -24,7 +24,9 @@ private:
 
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 
-	
+protected:
+	UFUNCTION(BlueprintCallable, Category = Setup)
+	ATank * GetControlledTank() const;
 
 public:
 	virtual void BeginPlay() override;
