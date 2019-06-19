@@ -17,6 +17,9 @@ ATank::ATank()
 void ATank::BeginPlay()
 {
 	Super::BeginPlay(); // Needed for BP Begin Play to run!
+
+	auto TankName = GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s BADOINK: Tank C++ Begin Play"), *TankName)
 }
 
 void ATank::AimAt(FVector HitLocation)
