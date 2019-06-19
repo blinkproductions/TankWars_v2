@@ -8,7 +8,6 @@
 
 #include "TankPlayerController.generated.h"
 
-class ATank;
 class UTankAimingComponent;
 
 /**
@@ -21,8 +20,6 @@ class TANKWARS_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 	
 private:
-	
-
 	// Start the tank moving the barrel so that a shot would hit where
 	// the crosshair intersects the world
 	void AimTowardsCrosshair();
@@ -30,8 +27,6 @@ private:
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
 
 protected:
-	UFUNCTION(BlueprintCallable, Category = Setup)
-	ATank * GetControlledTank() const;
 
 	UFUNCTION(BlueprintImplementableEvent, Category = Setup)
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
