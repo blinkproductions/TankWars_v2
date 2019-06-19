@@ -8,9 +8,6 @@
  
 #include "TankAIController.generated.h"
 
-// Forward Declaration
-class ATank;
-
 UCLASS()
 class TANKWARS_API ATankAIController : public AAIController
 {
