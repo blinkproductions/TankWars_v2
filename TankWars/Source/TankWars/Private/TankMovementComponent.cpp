@@ -18,6 +18,14 @@ void UTankMovementComponent::IntendMoveForward(float Throw)
 	// TODO prevent double-speed due to dual control use
 }
 
+void UTankMovementComponent::IntendTurnRight(float Throw)
+{
+	if (!ensure(LeftTrack && RightTrack)) { return; }
+	LeftTrack->SetThrottle(Throw);
+	RightTrack->SetThrottle(-Throw);
+	// TODO prevent double-speed due to dual control use
+}
+
 void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed)
 {
 	// No need to call Super as we're replacing the functionality
@@ -32,10 +40,3 @@ void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool
 	IntendTurnRight(RightThrow);
 }
 
-void UTankMovementComponent::IntendTurnRight(float Throw)
-{
-	if (!ensure(LeftTrack && RightTrack)) { return; }
-	LeftTrack->SetThrottle(Throw);
-	RightTrack->SetThrottle(-Throw);
-	// TODO prevent double-speed due to dual control use
-}
