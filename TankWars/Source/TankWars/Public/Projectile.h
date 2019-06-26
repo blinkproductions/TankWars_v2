@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Engine/World.h"
 #include "GameFramework/ProjectileMovementComponent.h"
+#include "Components/StaticMeshComponent.h"
 #include "Projectile.generated.h"
 
 UCLASS()
@@ -28,4 +29,9 @@ public:
 private:
 	UProjectileMovementComponent* ProjectileMovementComponent = nullptr;
 
+	UPROPERTY(VisibleAnywhere, Category = Components)
+	UStaticMeshComponent* CollisionMesh = nullptr;
+
+	/*UPROPERTY(VisibleAnywhere, Category = Components)
+	UParticleSystemComponent* LaunchBlast = nullptr;*/
 };
