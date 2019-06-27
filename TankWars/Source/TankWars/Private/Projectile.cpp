@@ -19,7 +19,8 @@ AProjectile::AProjectile()
 	CollisionMesh->SetVisibility(false);
 
 
-	/*LaunchBlast = CreateDefaultSubobject<UParticleSystemComponent>(FName("Launch Blast"));*/
+	LaunchBlast = CreateDefaultSubobject<UParticleSystemComponent>(FName("Launch Blast"));
+	LaunchBlast->AttachTo(RootComponent);
 }
 
 // Called when the game starts or when spawned
