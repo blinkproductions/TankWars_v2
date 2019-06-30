@@ -15,7 +15,7 @@ AProjectile::AProjectile()
 
 	CollisionMesh = CreateDefaultSubobject<UStaticMeshComponent>(FName("Collision Mesh"));
 	SetRootComponent(CollisionMesh);
-	CollisionMesh->SetNotifyRigidBodyCollision(CollisionMesh);
+	CollisionMesh->SetNotifyRigidBodyCollision(true); // Collision Mesh
 	CollisionMesh->SetVisibility(false);
 
 	LaunchBlast = CreateDefaultSubobject<UParticleSystemComponent>(FName("Launch Blast"));
