@@ -97,12 +97,12 @@ void UTankAimingComponent::AimAt(FVector HitLocation)
 	// If no solution found do nothing
 }
 
-void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection) 
+void UTankAimingComponent::MoveBarrelTowards(FVector TargetAimDirection) 
 {
 	if (!ensure(Barrel && Turret)) { return; }
 	// Work-out difference between current barrel rotation, and AimDirection
 	auto BarrelRotation = Barrel->GetForwardVector().Rotation();
-	auto AimsAsRotator = AimDirection.Rotation();
+	auto AimsAsRotator = TargetAimDirection.Rotation();
 	auto DeltaRotator = AimsAsRotator - BarrelRotation;
 
 	// Always yaw the shortest way
